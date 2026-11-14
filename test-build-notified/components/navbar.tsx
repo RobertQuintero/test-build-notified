@@ -10,7 +10,7 @@ const pathname = usePathname();
     return (
     <header className="relative w-full bg-white ">
 
-      <nav className="px mx-auto flex justify-between items-center max-w-7xl text-sm p-4 md:px-8">
+      <nav className="hidden px mx-auto lg:flex justify-between items-center max-w-7xl text-sm p-4 md:px-8">
 
         {/* Left: Brand */}
         <Link href="/" className="flex items-start gap-2 whitespace-nowrap">
@@ -28,7 +28,7 @@ const pathname = usePathname();
         </Link>
 
         {/* Center: Navigation */}
-        <div className="flex h-full items-center justify-center ">
+        <div className="flex h-full w-fit items-center justify-center ">
           {siteConfig.navigation &&
             Object.values(siteConfig.navigation).map((item, index) => {
               const isActive = pathname === item.href;
@@ -37,7 +37,7 @@ const pathname = usePathname();
                 <Link
                   key={index}
                   href={item.href}
-                  className="relative flex h-full flex-col items-center justify-center text-slate-700 p-4 "
+                  className="relative flex h-full w-fit flex-col items-center justify-center text-slate-700 p-4 "
                 >
                   {item.label}
 

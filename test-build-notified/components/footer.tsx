@@ -16,11 +16,10 @@ export default function Footer() {
     const pathname = usePathname();
 
     return (
-    <footer className="w-full bg-linear-to-r from-[#04233c] via-[#0a3656] to-[#06243d] text-slate-200 py-14 px-6 md:px-16 font-sans">
-      <div className="max-w-6xl mx-auto">
+    <footer className="w-full bg-linear-to-r from-[#0b487a] via-[#063150] to-[#031a2e] text-slate-200 py-14 px-4 md:px-8 ">
+      <div className="max-w-7xl mx-auto">
         {/* Main 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-
+<div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] lg:gap-0 md:gap-8 gap-16">
           {/* Column 1: Contact Us */}
           <div>
             <h3 className="text-base font-medium tracking-wider uppercase text-slate-300 mb-5">
@@ -48,7 +47,7 @@ export default function Footer() {
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
-                <span>{siteConfig.contacts.emailLink}</span>
+                <span>SEND EMAIL</span>
               </a>
             </div>
           </div>
@@ -71,7 +70,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Investor Email Alerts */}
-          <div>
+          <div >
             <h3 className="text-base font-medium tracking-wider uppercase text-slate-300 mb-5">
               INVESTOR EMAIL ALERTS
             </h3>
@@ -89,7 +88,7 @@ export default function Footer() {
                       onChange={(e) => setFilingChecked(e.target.checked)}
                       className="w-3.5 h-3.5 rounded-none border-slate-300 bg-white text-[#0a3656] focus:ring-0"
                     />
-                    <span>Filing</span>
+                    <span>Filing Updates</span>
                   </label>
                   <label className="flex items-center gap-2.5 text-xs text-slate-200 cursor-pointer">
                     <input
@@ -113,12 +112,12 @@ export default function Footer() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full max-w-xs h-9 px-3 bg-white text-slate-900 text-sm focus:outline-none"
+                  className="w-full max-w-sm h-10 px-3 bg-white text-slate-900 text-sm focus:outline-none"
                 />
               </div>
 
               {/* Agree Checkbox */}
-              <div className="pt-1">
+              <div>
                 <label className="flex items-center gap-2.5 text-xs text-slate-200 cursor-pointer mb-2">
                   <input
                     type="checkbox"
@@ -129,7 +128,7 @@ export default function Footer() {
                   />
                   <span>Agree</span>
                 </label>
-                <p className="text-xs leading-relaxed text-slate-300 pl-6">
+                <p className="text-sm leading-relaxed text-slate-300 pl-6">
                   Checking this box indicates your consent to the Personal Information Cross-Border Transfer Authorization and your subscription to Investor Email Alert updates from the Company Investor Relations website.
                 </p>
               </div>

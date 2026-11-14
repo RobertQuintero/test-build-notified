@@ -39,7 +39,7 @@ export const siteConfig = {
     address: "Address: The Company",
     address2: "11-11 11th AVE",
     address3: "New York, New York",
-    telephone: "Tel: +11234567",
+    telephone: "+11234567",
     emailLink: "mailto:info@thecompany.com",
     rights: "© 2025 The Company",
   },
