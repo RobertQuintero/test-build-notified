@@ -10,6 +10,7 @@ const pathname = usePathname();
     return (
     <header className="relative w-full bg-white ">
 
+      {/* // Desktop Navigation */}
       <nav className="hidden px mx-auto lg:flex justify-between items-center max-w-7xl text-sm p-4 md:px-8">
 
         {/* Left: Brand */}
@@ -73,6 +74,20 @@ const pathname = usePathname();
           </svg>
         </a>
 
+      </nav>
+
+      {/* // Mobile Navigation */}
+      <nav className="lg:hidden flex justify-between items-center px-4 py-2 bg-white border-b border-slate-200">
+        {/* Left: Brand */}
+        <Link href="/" className="flex items-center gap-2 whitespace-nowrap">
+          <span className="relative h-6 w-6 -bottom-2">
+            {/* Blue square behind */}
+            <span className="absolute -left-3 -top-3 h-6 w-6 bg-[#0875a5] z-0" />
+
+            {/* Circle in front */}
+            <span className="absolute inset-0 rounded-full border-2 border-[#6b9bb5] bg-white z-10" />
+          </span>
+        </Link>
       </nav>
     </header>
   );

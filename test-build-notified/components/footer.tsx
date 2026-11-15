@@ -1,6 +1,5 @@
 "use client";
 import { siteConfig } from "@/lib/siteConfig";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Footer() {
@@ -12,8 +11,6 @@ export default function Footer() {
   const handleSubmit = () => {
     alert(`Subscribed ${email}`);
   };
-
-    const pathname = usePathname();
 
     return (
     <footer className="w-full bg-linear-to-r from-[#0b487a] via-[#063150] to-[#031a2e] text-slate-200 py-14 px-4 md:px-8 ">
