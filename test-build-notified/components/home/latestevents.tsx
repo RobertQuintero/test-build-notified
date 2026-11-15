@@ -21,7 +21,7 @@ const latestevents = [
 export function LatestEvents() {
   return (
     <section className="bg-white w-full mx-auto p-6 md:p-12 py-8 md:py-16 text-neutral-500">
-      <div className="max-w-7xl mx-auto text-left flex flex-col gap-8 md:gap-16 md:flex-row justify-between pb-6">
+      <div className="max-w-7xl mx-auto text-left flex flex-col gap-8 md:gap-16 md:flex-row justify-between mb-6">
         <div className="w-full ">
           <h2 className="text-2xl md:text-4xl uppercase mb-6">
             MESSAGE FROM CEO

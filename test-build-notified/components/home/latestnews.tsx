@@ -23,7 +23,7 @@ const latestnews = [
 
 export function LatestNews() {
   return (
-    <section className="bg-linear-to-r from-sky-700 via-sky-900 to-sky-950 max-w-full mx-auto p-6 md:p-12 ">
+    <section className="bg-linear-to-r from-sky-800 via-sky-900 to-sky-950 max-w-full mx-auto p-6 md:p-12 ">
     <div className="max-w-7xl mx-auto flex flex-col justify-center items-center text-white ">
       <h2 className="text-2xl md:text-4xl uppercase mb-6 ">
         Latest News
@@ -34,15 +34,33 @@ export function LatestNews() {
           <li key={index} className="mb-2 border-b border-white pb-3.5">
             <span className="text-sm">{news.date}</span>
             <p className="text-base py-1">{news.content}</p>
-            <a href={news.url} className=" font-medium hover:text-sky-700 hover:underline">
+            <a href={news.url} className="text-base font-medium capitalize transition-opacity hover:opacity-70 ">
               Read more
             </a>
           </li>
         ))}
       </ul>
-     <button className="mt-4 px-4 py-2  rounded hover:text-sky-700 ">
-        View All News
-      </button>
+          <a
+            href="#"
+            className="flex items-center justify-center gap-0.5 text-sm font-medium uppercase transition-opacity hover:opacity-70 px-4 py-2 mt-3"
+          >
+            VIEW ALL NEWS
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="mt-[1px]"
+          >
+            <path d="M5 12h14" />
+            <path d="m13 6 6 6-6 6" />
+          </svg>
+          </a>
     </div>
     </section>
   );
