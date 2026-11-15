@@ -13,7 +13,7 @@ export default function Footer() {
   };
 
     return (
-    <footer className="w-full bg-linear-to-r from-[#0b487a] via-[#063150] to-[#031a2e] text-slate-200 py-14 px-4 md:px-8 ">
+    <footer className="w-full bg-linear-to-r from-sky-900 via-sky-950 to-slate-950 text-slate-200 py-14 px-4 md:px-8 ">
       <div className="max-w-7xl mx-auto">
         {/* Main 3-Column Grid */}
 <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] lg:gap-0 md:gap-8 gap-16">

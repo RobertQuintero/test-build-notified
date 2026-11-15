@@ -32,7 +32,7 @@ export function HeroBillboard() {
   }, []);
 
   return (
-    <section className="relative h-[50dvh] md:h-[60vh] w-full overflow-hidden">
+    <section className="relative h-[50dvh] md:h-[60vh] w-full overflow-hidden  px-6 md:px-10">
 
       {/* Background Slides */}
       {slides.map((slide, index) => (
@@ -59,7 +59,7 @@ export function HeroBillboard() {
       ))}
 
       {/* Slide Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 md:px-10">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center">
         <div className="text-white">
           <h1 className="text-5xl font-light tracking-tight md:text-6xl lg:text-9xl">
             2025
