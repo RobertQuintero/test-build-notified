@@ -12,15 +12,15 @@ export default function Footer() {
     alert(`Subscribed ${email}`);
   };
 
-    return (
+  return (
     <footer className="w-full bg-linear-to-r from-sky-900 via-sky-950 to-slate-950 text-slate-200 py-14 px-4 md:px-8 ">
       <div className="max-w-7xl mx-auto">
         {/* Main 3-Column Grid */}
-<div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] lg:gap-0 md:gap-8 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] lg:gap-0 md:gap-8 gap-16">
           {/* Column 1: Contact Us */}
           <div>
             <h3 className="text-base font-medium tracking-wider uppercase text-slate-300 mb-5">
-                CONTACT US
+              CONTACT US
             </h3>
             <div className="text-sm leading-relaxed text-slate-300 space-y-0.5 mb-6">
               <p>{siteConfig.contacts.address}</p>
@@ -60,18 +60,20 @@ export default function Footer() {
                   href={siteConfig.quicklinks.informationrequestform.href}
                   className="text-slate-200 hover:text-white transition"
                 >
-                    {siteConfig.quicklinks.informationrequestform.label}
+                  {siteConfig.quicklinks.informationrequestform.label}
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Column 3: Investor Email Alerts */}
-          <div >
+          <div>
             <h3 className="text-base font-medium tracking-wider uppercase text-slate-300 mb-5">
               INVESTOR EMAIL ALERTS
             </h3>
-            <p className="text-xs text-slate-300 mb-2">Required fields denoted by an asterisk (*).</p>
+            <p className="text-xs text-slate-300 mb-2">
+              Required fields denoted by an asterisk (*).
+            </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Alert Type Checkboxes */}
@@ -109,7 +111,7 @@ export default function Footer() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full max-w-sm h-10 px-3 bg-white text-slate-900 text-sm focus:outline-none"
+                  className="w-full md:max-w-sm h-10 px-3 bg-white text-slate-900 text-sm focus:outline-none"
                 />
               </div>
 
@@ -126,7 +128,10 @@ export default function Footer() {
                   <span>Agree</span>
                 </label>
                 <p className="text-sm leading-relaxed text-slate-300 pl-6">
-                  Checking this box indicates your consent to the Personal Information Cross-Border Transfer Authorization and your subscription to Investor Email Alert updates from the Company Investor Relations website.
+                  Checking this box indicates your consent to the Personal
+                  Information Cross-Border Transfer Authorization and your
+                  subscription to Investor Email Alert updates from the Company
+                  Investor Relations website.
                 </p>
               </div>
 
@@ -160,4 +165,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-};
+}

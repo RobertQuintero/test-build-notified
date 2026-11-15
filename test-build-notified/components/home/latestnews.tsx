@@ -29,10 +29,10 @@ export function LatestNews() {
         Latest News
       </h2>
 
-      <ul className="flex flex-row w-full pl-5 gap-6">
+      <ul className="flex flex-col md:flex-row w-full justify-evenly gap-6 ">
         {latestnews.map((news, index) => (
-          <li key={index} className="mb-2 max-w-sm border-b border-white pb-3.5">
-            <span className="text-sm">{news.date}: </span>
+          <li key={index} className="mb-2 border-b border-white pb-3.5">
+            <span className="text-sm">{news.date}</span>
             <p className="text-base py-1">{news.content}</p>
             <a href={news.url} className=" font-medium hover:text-sky-700 hover:underline">
               Read more
