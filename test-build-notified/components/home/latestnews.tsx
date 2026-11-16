@@ -55,7 +55,7 @@ export function LatestNews() {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="mt-[1px]"
+            className="mt-px"
           >
             <path d="M5 12h14" />
             <path d="m13 6 6 6-6 6" />

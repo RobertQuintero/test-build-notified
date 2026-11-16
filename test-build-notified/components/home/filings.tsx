@@ -29,13 +29,13 @@ export function Filings() {
       <div className="max-w-7xl mx-auto  text-white">
 
         {/* Heading */}
-        <h2 className="mb-[48px] text-center text-[36px] font-normal leading-[43px] uppercase">
+        <h2 className="mb-12 text-center text-2xl md:text-4xl  uppercase">
           FILINGS
         </h2>
 
         {/* Filings Table */}
         <div className="w-full overflow-x-auto">
-          <table className="w-full min-w-[900px] table-fixed border-collapse text-left text-[16px]">
+          <table className="w-full min-w-225 table-fixed border-collapse text-left text-[16px]">
             <colgroup>
               <col className="w-[19%]" />
               <col className="w-[17%]" />
@@ -113,7 +113,7 @@ export function Filings() {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="mt-[1px]"
+            className="mt-px"
           >
             <path d="M5 12h14" />
             <path d="m13 6 6 6-6 6" />
