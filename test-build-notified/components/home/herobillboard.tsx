@@ -61,10 +61,10 @@ export function HeroBillboard() {
       {/* Slide Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center">
         <div className="text-white">
-          <h1 className="text-5xl font-light tracking-tight md:text-6xl lg:text-9xl">
+          <h1 className="text-5xl tracking-tight md:text-6xl lg:text-9xl">
             2025
           </h1>
-          <p className="mt-2 text-lg font-light md:text-2xl">
+          <p className="mt-2 text-xl font-light md:text-3xl">
             Building a Stronger Future Through Innovation and Growth.
           </p>
 
