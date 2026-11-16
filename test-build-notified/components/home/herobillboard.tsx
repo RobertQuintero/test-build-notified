@@ -32,7 +32,7 @@ export function HeroBillboard() {
   }, []);
 
   return (
-    <section className="relative h-[50dvh] md:h-[60vh] w-full overflow-hidden  px-6 md:px-10">
+    <section className="relative h-[45dvh] md:h-[60vh] w-full overflow-hidden  px-6 md:px-10">
 
       {/* Background Slides */}
       {slides.map((slide, index) => (
