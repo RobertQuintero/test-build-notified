@@ -2,12 +2,13 @@
 import { siteConfig } from "@/lib/siteConfig";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
 
 const pathname = usePathname();
 const [isOpen, setIsOpen] = useState(false);
+const menuButtonRef = useRef<HTMLButtonElement>(null);
 
 // Close the mobile menu whenever the route changes
 useEffect(() => {
@@ -25,7 +26,15 @@ useEffect(() => {
 }, []);
 
     return (
-    <header className="relative w-full bg-white ">
+    <header
+      className="sticky top-0 z-50 w-full bg-white"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && isOpen) {
+          setIsOpen(false);
+          menuButtonRef.current?.focus();
+        }
+      }}
+    >
 
       {/* // Desktop Navigation */}
       <nav className="hidden px mx-auto lg:flex justify-between items-center max-w-7xl text-sm p-4 md:px-8">
@@ -48,13 +57,14 @@ useEffect(() => {
         {/* Center: Navigation */}
         <div className="flex h-full w-fit items-center justify-center ">
           {siteConfig.navigation &&
-            Object.values(siteConfig.navigation).map((item, index) => {
+            Object.values(siteConfig.navigation).map((item) => {
               const isActive = pathname === item.href;
 
               return (
                 <Link
-                  key={index}
+                  key={item.href}
                   href={item.href}
+                  aria-current={isActive ? "page" : undefined}
                   className="relative flex h-full w-fit flex-col items-center justify-center text-slate-700 p-4 "
                 >
                   {item.label}
@@ -115,7 +125,7 @@ useEffect(() => {
           <a
             href="/search"
             aria-label="Search"
-            className="flex items-center text-slate-700 transition-colors hover:text-[#0875a5]"
+            className="flex min-h-11 min-w-11 items-center justify-center text-slate-700 transition-colors hover:text-[#0875a5] focus-visible:ring-2 focus-visible:ring-[#0875a5]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -134,12 +144,13 @@ useEffect(() => {
           </a>
 
           <button
+            ref={menuButtonRef}
             type="button"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="flex items-center text-slate-700 transition-colors hover:text-[#0875a5]"
+            className="flex min-h-11 min-w-11 items-center justify-center text-slate-700 transition-colors hover:text-[#0875a5] focus-visible:ring-2 focus-visible:ring-[#0875a5]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -170,35 +181,37 @@ useEffect(() => {
       </nav>
 
       {/* Mobile dropdown menu */}
-      {isOpen && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden absolute left-0 top-full z-50 w-full bg-white border-b border-slate-200 shadow-sm"
-        >
-          <div className="flex flex-col px-4 py-2 text-sm">
-            {siteConfig.navigation &&
-              Object.values(siteConfig.navigation).map((item, index) => {
-                const isActive = pathname === item.href;
+      <nav
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+        hidden={!isOpen}
+        className="lg:hidden absolute left-0 top-full z-50 w-full bg-white border-b border-slate-200 shadow-sm"
+      >
+        <div className="flex flex-col px-4 py-2 text-sm">
+          {siteConfig.navigation &&
+            Object.values(siteConfig.navigation).map((item) => {
+              const isActive = pathname === item.href;
 
-                return (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className="relative flex flex-col items-start justify-center text-slate-700 py-4 border-b border-slate-100 last:border-b-0 transition-colors hover:text-[#0875a5]"
-                  >
-                    {item.label}
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  onClick={() => setIsOpen(false)}
+                  className="relative flex min-h-12 flex-col items-start justify-center text-slate-700 py-4 border-b border-slate-100 last:border-b-0 transition-colors hover:text-[#0875a5] focus-visible:ring-2 focus-visible:ring-[#0875a5]"
+                >
+                  {item.label}
 
-                    {isActive && (
-                      <span className="absolute bottom-0 text-xs tracking-[0.2rem]">
-                        ...........
-                      </span>
-                    )}
-                  </Link>
-                );
-              })}
-          </div>
+                  {isActive && (
+                    <span className="absolute bottom-0 text-xs tracking-[0.2rem]">
+                      ...........
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
         </div>
-      )}
+      </nav>
     </header>
   );
 };
