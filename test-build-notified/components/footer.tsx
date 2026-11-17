@@ -159,7 +159,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright Row */}
-        <div className="mt-16 pt-4">
+        <div className="mt-16 pt-4 flex items-start gap-2 whitespace-nowrap px-4">
+          <span className="relative h-5 w-5 -bottom-2">
+            {/* Blue square behind */}
+            <span className="absolute -left-3 -top-3 h-5 w-5 bg-slate-400 z-0" />
+
+            {/* Circle in front */}
+            <span className="absolute inset-0 rounded-full border border-[#6b9bb5] bg-sky-950 z-10" />
+          </span>
           <p className="text-xs text-slate-300">{siteConfig.contacts.rights}</p>
         </div>
       </div>
