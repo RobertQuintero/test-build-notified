@@ -7,30 +7,56 @@ export const siteConfig = {
       href: "/",
       description:
         ".",
+      children: [],
     },
     financials: {
       label: "FINANCIALS",
-      href: "/financials",
       description:
         ".",
+      children: [
+        { label: "Financial Results", href: "/financials/results" },
+        { label: "Annual Reports", href: "/financials/annual-reports" },
+        {
+          label: "Shareholder Information",
+          href: "/financials/shareholder-information",
+        },
+      ],
     },
     newsandegm: {
       label: "NEWS AND EGM",
-      href: "/news-and-esg",
       description:
         ".",
+      children: [
+        { label: "Latest News", href: "/news-and-esg/news" },
+        { label: "Events and Presentations", href: "/news-and-esg/events" },
+        { label: "EGM Information", href: "/news-and-esg/egm" },
+      ],
     },
     leadershipandgovernance: {
       label: "LEADERSHIP AND GOVERNANCE",
-      href: "/leadership-and-governance",
       description:
         ".",
+      children: [
+        { label: "Board of Directors", href: "/leadership-and-governance/board" },
+        {
+          label: "Corporate Governance",
+          href: "/leadership-and-governance/governance",
+        },
+        {
+          label: "Board Committees",
+          href: "/leadership-and-governance/committees",
+        },
+      ],
     },
     faqsandresources: {
       label: "FAQS AND RESOURCES",
-      href: "/faqs-and-resources",
       description:
         ".",
+      children: [
+        { label: "Frequently Asked Questions", href: "/faqs-and-resources/faqs" },
+        { label: "Useful Resources", href: "/faqs-and-resources/resources" },
+        { label: "Contact Information", href: "/faqs-and-resources/contact" },
+      ],
     }
 
   },
