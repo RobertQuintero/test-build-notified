@@ -99,6 +99,10 @@ During implementation, I focused on:
 
 No additional UI component libraries or third-party styling frameworks were used in the Next.js/Drupal implementation.
 
+AI Tool Disclosure
+
+GitHub Copilot was enabled during development and used for inline code completion, repetitive coding suggestions, and occasional assistance with code comments and documentation. All design decisions, implementation planning, code structure, and overall development of both versions were handled by me. No autonomous AI coding agents were used.
+
 ## 7. Total Time Spent
 
 **Total development time:** Approximately 20 hours over the course of 5 days.
