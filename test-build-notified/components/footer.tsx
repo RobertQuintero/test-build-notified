@@ -71,14 +71,14 @@ export default function Footer() {
             <h3 className="text-base font-medium tracking-wider uppercase text-slate-300 mb-5">
               INVESTOR EMAIL ALERTS
             </h3>
-            <p className="text-xs text-slate-300 mb-2">
+            <p className="text-sm text-slate-300 mb-1">
               Required fields denoted by an asterisk (*).
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Alert Type Checkboxes */}
               <div>
-                <p className="text-xs text-slate-300 mb-2">Alert type *</p>
+                <p className="text-xs text-slate-300 mb-4">Alert type *</p>
                 <div className="space-y-2">
                   <label className="flex items-center gap-2.5 text-xs text-slate-200 cursor-pointer">
                     <input
@@ -87,7 +87,7 @@ export default function Footer() {
                       onChange={(e) => setFilingChecked(e.target.checked)}
                       className="w-3.5 h-3.5 rounded-none border-slate-300 bg-white text-[#0a3656] focus:ring-0"
                     />
-                    <span>Filing Updates</span>
+                    <span>Filing</span>
                   </label>
                   <label className="flex items-center gap-2.5 text-xs text-slate-200 cursor-pointer">
                     <input
@@ -96,7 +96,7 @@ export default function Footer() {
                       onChange={(e) => setNewsChecked(e.target.checked)}
                       className="w-3.5 h-3.5 rounded-none border-slate-300 bg-white text-[#0a3656] focus:ring-0"
                     />
-                    <span>Alert type *</span>
+                    <span>News</span>
                   </label>
                 </div>
               </div>
